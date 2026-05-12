@@ -1,6 +1,6 @@
 from flask import Flask # Importa o framework Flask para criar a aplicação web
 from db import db  # Importa a instância do banco de dados SQLAlchemy
-from routes.carro_routes import carro_routes # Importa as rotas do módulo de carros
+from routes.jogo_routes import jogo_routes # Importa as rotas do módulo de carros
 
 app = Flask(__name__) # Cria a instância da aplicação Flask
 
@@ -10,7 +10,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Desativa o rastreamento 
 
 db.init_app(app)  # Inicializa a aplicação com a instância do banco de dados
 
-app.register_blueprint(carro_routes) # Registra o blueprint das rotas de carro na aplicação Flask
+app.register_blueprint(jogo_routes) # Registra o blueprint das rotas de carro na aplicação Flask
 
 # Verifica se o script está sendo executado diretamente
 if __name__ == '__main__':  
